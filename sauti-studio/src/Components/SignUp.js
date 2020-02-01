@@ -3,6 +3,7 @@ import '../Components/../App.css';
 
 export default function SignUp() {
     return (
+        
         <div className="whole-page">
             <div className="sign-up-section">
                 <h2 className="title"> Create an account </h2>
