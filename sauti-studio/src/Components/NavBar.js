@@ -1,22 +1,25 @@
 import React from 'react';
+import { slide as Menu } from "react-burger-menu";
+import './NavBar.css';
 
-const NavBar = () => {
-  return (
-    <div>
-      <div className="App">
-        <h1>Sauti Studio</h1>
-        <div>
-          <a href="">Home</a>
-        </div>
-        <div>
-          <a href="">About</a>
-        </div>
-        <div>
-          <a href="">Contact</a>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default NavBar;
+  export default class NavBar extends React.Component {
+    showSettings (event) {
+        event.preventDefault();
+       
+      }
+    
+      render () {
+        // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
+        return (
+          <Menu>
+            <a id="home"className="menu-item" href="/">Home</a>
+            <a id="login" className="menu-item" href="/login">Login</a>
+            <a id="about" className="menu-item" href="/about">About</a>
+            <a id="signup" className="menu-item" href="/signup">Sign Up</a>
+            <a id="contact" className="menu-item" href="/contact">Contact</a>
+            <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
+            {/* <button className={'btn btn-primary'} style={{position: "fixed", bottom: "0"}}>Start New</button> */}
+          </Menu>
+        );
+      }
+    }

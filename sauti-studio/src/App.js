@@ -1,9 +1,11 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import FormikUserForm from './Components/UserForm';
 
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
 import NavBar from './Components/NavBar';
+import Contact from './Components/Contact';
 
 
 
@@ -11,10 +13,15 @@ import NavBar from './Components/NavBar';
 function App() {
   return (
     <div className="App">
-      {/* <FormikUserForm  user="name"/> */}
-      <Login />
-      <SignUp />
-      <NavBar/>
+      <Router>
+          <NavBar />
+          <Route path="/contact" component={Contact} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
+          
+      </Router>
+      
+      
     </div>
   );
 }
