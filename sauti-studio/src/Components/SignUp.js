@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 import '../Components/../App.css';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 export default function SignUp() {
 
   const [user, setUser] = useState({ username: "", email: "", password: "" });
 
-  const handleUserNameChange = event => {
-    setUser({ ...user, username: event.target.value });
-  };
 
- const handleEmailChange = event => {
-    setUser({ ...user, email: event.target.value });
-  };
+  const handleChange = event => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+ };
 
-  const handlePasswordChange = event => {
-    setUser({ ...user, password: event.target.value });
-  };
-
+  
   const handleSubmit = event => {
     event.preventDefault();
     console.log(user.username);
@@ -43,37 +38,37 @@ export default function SignUp() {
               placeholder="Email"
               name="email"
               value ={user.email}
-              onChange={event => handleEmailChange(event)} />
+              onChange={event => handleChange(event)} />
                     
           <label for ="username">Username</label>
             <input id="username"
               type="text"
               placeholder="Username"
               name="username" value={user.username}
-              onChange={event => handleUserNameChange(event)} />
+              onChange={event => handleChange(event)} />
     
          <label for = "password"> Password </label>
             <input id="password"
-              type="text"
+              type="password"
               placeholder="Password"
               name="password"
               value ={user.password}
-              onChange={event => handlePasswordChange(event)} />
-                        {/* <text>Password most must have at least 8 characters</text> */}
+              onChange={event => handleChange(event)} />
+                        
                     <label for ="password2">Re-enter password</label>
     
             <input id="password2"
-              type="text"
+              type="password"
               placeholder="Password"
               name="password2"
               value ={user.password2}
-              onChange={event => handlePasswordChange(event)} />
+              onChange={event => handleChange(event)} />
                         {/* <h6>Password most must match first enty </h6> */}
                     
                     <button onSubmit={event => handleSubmit(event)} >
                         Create your sauti-studio account</button>
 
-                    <h6 className="last-text">Already have an account whit sauti-studio? Please Login </h6>
+                    <h6 className="last-text">Already have an account whit sauti-studio?  <a href="Components/Login.js"> Please Sign in </a> </h6>
                 
                     
                 </form>
