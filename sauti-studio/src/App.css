@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 .whole-page{
   padding-top: 20px;
   width: 100%;
@@ -17,13 +9,13 @@
 }
 
 .sign-up-section{
-  padding-top: 10px;
+  padding-top:5px;
   width: 30%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 1px solid rgb(187,187,187);
+  /* border: 1px solid rgb(187,187,187); */
   background: rgb(255,255,255);
   margin-left: 35%;
   margin-right: 35%;
@@ -35,7 +27,7 @@
   padding-top: 10px;
   padding-bottom: 5px;
   padding-left: 3px;
-  border: 2px solid whitesmoke;
+  /* border: 2px solid whitesmoke; */
   margin: 5px;
   border-radius: 5px;
   color: rgb(10, 169, 190);
@@ -62,11 +54,14 @@ label{
   padding-left: 8px;
 }
 button{
-  width: 98%;
-  background: rgb(156, 156, 207);
+  width: 99%;
+  /* background: black; */
+  background: rgb(35, 223, 173);;
   color: white;
+  border-radius: 5px;
   margin-left: 1%;
   margin-right: 1%;
+  box-sizing: border-box;
 }
 form{
   padding-top: 10px;
@@ -83,7 +78,7 @@ form{
 }
 
 .footer-text{
- margin-top: 60px;
+ margin-top: 40px;
  padding-top: 15px;
   display: flex;
   justify-content: space-evenly;
