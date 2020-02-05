@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import React from "react";
 import { useForm } from "react-hook-form";
 import './Contact.css';
@@ -14,7 +14,7 @@ const defaultValues = {
   };
 
 const Contact = () => {
-    const { register, handleSubmit, watch, reset, errors } = useForm({ defaultValues });
+    const { register, handleSubmit, reset, errors } = useForm({ defaultValues });
     const onSubmit = data => console.log(data);
     console.log(errors);
 
