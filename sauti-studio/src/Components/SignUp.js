@@ -53,10 +53,23 @@ const FormikSignUp = withFormik({
       username: username || "",
       password: password || ""
     };
-    },
+  },
+  validationSchema: Yup.object().shape({
+    
+    email: Yup.string()
+      .email()
+      .required(),
+    username: Yup.string()
+      .required()
+       .min(6),
+    password: Yup.string()
+      .min(6)
+      .required()
+  }),
+
     handleSubmit(values) {
     console.log(values);
     //THIS IS WHERE YOU DO YOUR FORM SUBMISSION CODE... HTTP REQUESTS, ETC.
   }
-})(SignUp);
+})(FormikSignUp);
 export default FormikSignUp;
