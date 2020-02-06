@@ -1,6 +1,6 @@
 
 .whole-page{
-  padding-top: 5px;
+  padding-top: 35px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
 }
 
 .sign-up-section{
-  padding-top:5px;
+  padding-top:15px;
   width: 30%;
   /* height: 100%; */
   display: flex;
@@ -17,6 +17,7 @@
   justify-content: space-evenly;
   /* border: 1px solid rgb(187,187,187); */
   background: rgb(255,255,255);
+  margin-top: 25px;
   margin-left: 35%;
   margin-right: 35%;
   border-radius: 8px;
@@ -76,15 +77,17 @@ form{
   height: 200px;
   justify-content: space-evenly;
 }
-
+.last-text{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: .7rem;
+  padding-bottom: 15px;
+}
 .footer-text{
- margin-top: 30px;
+  margin-top: 80px;
  padding-top: 10px;
   display: flex;
   justify-content: space-evenly;
 }
-.last-text{
-  display: flex;
-  justify-content: space-evenly;
-}
+
 /* SignUp page styling ends here */

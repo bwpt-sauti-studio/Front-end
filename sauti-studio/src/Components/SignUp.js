@@ -1,82 +1,59 @@
 import React, { useState } from "react";
 import '../Components/../App.css';
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
-export default function SignUp() {
-
-  const [user, setUser] = useState({ username: "", email: "", password: "" });
+import { withFormik, Form, Field } from "formik";
+import * as Yup from "yup";
 
 
-  const handleChange = event => {
-    setUser({ ...user, [event.target.name]: event.target.value });
- };
+// export default function SignUp() {
+  function SignUp(){
 
-  
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log(user.username);
-    console.log(user.email);
-    console.log(user.password);
-  };
 
 
     return (
 
-        <div className="whole-page">
-            <div className="sign-up-section">
-                <h2 className="title"> Create an account </h2>
-                <form >
-                    <label for ="first-name">First Name</label>
-                    <input id="first-name" type="text" placeholder=" First Name " />
+      <div className="whole-page">
+        
+        <div className="sign-up-section">
+          
+                <h1 className="title"> Create an account </h1>
+                <Form >
+            
+             <Field type="text" name="first-name" placeholder="First Name" />
+        
+             <Field type="text" name="last-name" placeholder="Last Name" />
+          
+             <Field type="email" name="email" placeholder="Email" />
+          
+             <Field type="text" name="username" placeholder="Username" />
+          
+            <Field type="password" name="password" placeholder="Password" />
+        
+            <button>Create Account </button>
+            
+            <p className="last-text">Already have an Account?
+            <a href="Components/Login.js"> Please Sign in </a> </p> 
 
-                     <label for ="last-name">Last Name</label>
-                    <input id="last-name" type="text" placeholder=" Last Name " />
-                    
-          <label for ="email">Email</label>
-            <input id="email"
-              type="email"
-              placeholder="Email"
-              name="email"
-              value ={user.email}
-              onChange={event => handleChange(event)} />
-                    
-          <label for ="username">Username</label>
-            <input id="username"
-              type="text"
-              placeholder="Username"
-              name="username" value={user.username}
-              onChange={event => handleChange(event)} />
-    
-         <label for = "password"> Password </label>
-            <input id="password"
-              type="password"
-              placeholder="Password"
-              name="password"
-              value ={user.password}
-              onChange={event => handleChange(event)} />
-                        
-                    <label for ="password2">Re-enter password</label>
-    
-            <input id="password2"
-              type="password"
-              placeholder="Password"
-              name="password2"
-              value ={user.password2}
-              onChange={event => handleChange(event)} />
-                        {/* <h6>Password most must match first enty </h6> */}
-                    
-                    <button onSubmit={event => handleSubmit(event)} >
-                        Create your sauti-studio account</button>
-
-                    <h6 className="last-text">Already have an account whit sauti-studio?  <a href="Components/Login.js"> Please Sign in </a> </h6>
-                
-                    
-                </form>
+                </Form>
 
             </div>
+
             <nav className ="thierno-nav">
                 <p className ="footer-text">Copyright © bw-sauti-studio</p>
             </nav>
         </div>
     )
 }
+const FormikSignUp = withFormik({
+  mapPropsToValues({ email, username, password }) {
+      return {
+      email: email || "",
+      username: username || "",
+      password: password || ""
+    };
+    },
+    handleSubmit(values) {
+    console.log(values);
+    //THIS IS WHERE YOU DO YOUR FORM SUBMISSION CODE... HTTP REQUESTS, ETC.
+  }
+})(SignUp);
+export default FormikSignUp;
