@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 // import React from "react";
 import { useForm } from "react-hook-form";
+import Select from "react-select";
 import './Contact.css';
 
 const defaultValues = {
@@ -13,10 +14,31 @@ const defaultValues = {
     // RadioGroup: ""
   };
 
+  const options = [
+    { value: "appsupport", label: "App Support" },
+    { value: "myaccount", label: "My Account" },
+    { value: "customerSupport", label: "Customer Support" },
+    { value: "billing", label: "Billing" },
+    { value: "hithere", label: "Just Saying Hi!" }
+  ];
 const Contact = () => {
-    const { register, handleSubmit, reset, errors } = useForm({ defaultValues });
+    const { register, handleSubmit, reset, errors, setValue } = useForm({ defaultValues });
     const onSubmit = data => console.log(data);
     console.log(errors);
+
+    const [values, setReactSelect] = useState({
+        selectedOption: []
+      });
+    
+      const handleMultiChange = selectedOption => {
+        setValue("reactSelect", selectedOption);
+        setReactSelect({ selectedOption });
+      };
+    
+      useEffect(() => {
+        register({ name: "reactSelect" });
+        
+      }, []);
 
   return (
     <div className='form-wrapper'>
@@ -37,12 +59,18 @@ const Contact = () => {
         </div>
 
         <div className="form-group">
-        <select name="Subject" ref={register({ required: true })}>
-        <option value="App Support">App Support</option>
+        <Select classname="reactSelect" name="filters" placeholder="Subject" ref={register({ required: true })}
+        /* <option value="App Support">App Support</option>
         <option value=" My Account"> My Account</option>
         <option value=" Customer Support & Billing"> Customer Support & Billing</option>
-        <option value=" Just Saying Hi!"> Just Saying Hi!</option>
-        </select>
+        <option value=" Just Saying Hi!"> Just Saying Hi!</option> */
+        value={values.selectedOption}
+        options={options}
+        onChange={handleMultiChange}
+        isMulti
+        />
+
+        {/* </select> */}
         {errors.Subject && <p>This field is required</p>}
         </div>
 
@@ -59,14 +87,15 @@ const Contact = () => {
       <input name="Subscriber" type="radio" value="No" ref={register({ required: true })}/> */}
 
       <div className="form-group">
+      <label htmlFor="customCheck1"> Subscribe to Newsletter</label>
             <input
-              type="checkbox"
               placeholder="Subscribe to Newsletter"
+              type="checkbox"
               name="Subscribe to Newsletter"
               id="customCheck1"
               ref={register}
             />
-            <label htmlFor="customCheck1"> Subscribe to Newsletter</label>
+            {/* <label htmlFor="customCheck1"> Subscribe to Newsletter</label> */}
           </div>
 
           <button
