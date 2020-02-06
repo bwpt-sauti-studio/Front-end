@@ -56,4 +56,4 @@ const FormikSignUp = withFormik({
     //THIS IS WHERE YOU DO YOUR FORM SUBMISSION CODE... HTTP REQUESTS, ETC.
   }
 })(SignUp);
-export default FormikSignUp;
+export default SignUp;
