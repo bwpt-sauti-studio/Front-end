@@ -1,5 +1,10 @@
 
-import React, { useState } from "react";
+
+import React from 'react'
+import { Link } from 'react-router';
+
+import Login from './Login';
+
 import '../Components/../App.css';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
@@ -11,6 +16,7 @@ import * as Yup from "yup";
 
 
     return (
+
 
       <div className="whole-page">
         
@@ -35,6 +41,7 @@ import * as Yup from "yup";
             <a href="Components/Login.js"> Please Sign in </a> </p> 
 
                 </Form>
+
 
             </div>
 
