@@ -1,8 +1,6 @@
 
 import React, { useState } from "react";
-import React from 'react';
-import { Link } from 'react-router';
-
+// import { Link } from 'react-router';
 import Login from './Login';
 import '../Components/../App.css';
 import { withFormik, Form, Field } from "formik";
