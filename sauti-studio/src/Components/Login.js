@@ -8,7 +8,7 @@ import axiosWithAuth from './utils/axiosWithAuth';
     const login = e => {
         e.preventDefault();
         axiosWithAuth()
-        .post('BACKEND WE NEED TO BE ACCESSING', credentials)
+        .post('https://build-iv-sauti-studio.herokuapp.com/login', credentials)
         .then(res => {
             console.log(props.history);
             localStorage.setItem('token', res.data.token);

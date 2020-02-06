@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router';
+
+import Login from './Login';
 import '../Components/../App.css';
 
 export default function SignUp() {
@@ -25,7 +28,7 @@ export default function SignUp() {
                     
                     <button >Create your sauti-studio account</button>
 
-                    <h6 className="last-text">Retuning user? Sigin in </h6>
+                    <h6 className="last-text">Retuning user? Sign In </h6>
                     
                 </form>
 
