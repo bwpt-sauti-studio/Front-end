@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 // import FormikUserForm from './Components/UserForm';
 
 import Login from './Components/Login';
@@ -14,10 +14,18 @@ function App() {
 		<div className='App'>
 			<Router>
 				<NavBar />
-				<Route path='/contact' component={Contact} />
-				<Route path='/login' component={Login} />
-				<Route path='/signup' component={SignUp} />
-				{/* <Route path="/mindmap" component={Mindmap}/> */}
+				<div>
+					{/* <Link to='/login'>Log In</Link> */}
+					{/* <Link to='/protected'>Sign Up</Link> */}
+				</div>
+				<Switch>
+					<ProtectedRoute path='/login' component={Login} />
+					<Route exact path='/protected' component={Login} />
+					<Route path='/contact' component={Contact} />
+					<Route path='/login' component={Login} />
+					<Route path='/signup' component={SignUp} />
+					{/* <Route path="/mindmap" component={Mindmap}/> */}
+				</Switch>
 			</Router>
 		</div>
 	);
