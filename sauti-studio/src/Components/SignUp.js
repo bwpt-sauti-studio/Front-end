@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import Login from './Login';
 import '../Components/../App.css';
 import { withFormik, Form, Field } from "formik";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 // export default function SignUp() {
   function SignUp(){
     return (
@@ -19,7 +19,7 @@ import * as Yup from "yup";
             <Field type="password" name="password" placeholder="Password" />
             <button>Create Account </button>
             <p className="last-text">Already have an Account?
-            <a href="Components/Login.js"> Please Sign in </a> </p> 
+            <a href="/Login"> Please Sign in </a> </p> 
                 </Form>
             </div>
             <nav className ="thierno-nav">
