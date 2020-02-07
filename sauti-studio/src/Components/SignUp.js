@@ -1,11 +1,18 @@
 
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
+=======
+import React from "react";
+>>>>>>> 4ab0e536c4386167b2bd8ee63f0e61a22c317a91
 import '../Components/../App.css';
+// import NavBar './NavBar';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+// import axiosWithAuth from './utils/axiosWithAuth';
 
 
+<<<<<<< HEAD
 // export default function SignUp() {
 const  SignUp = ({
   values,
@@ -18,9 +25,14 @@ const  SignUp = ({
     console.log('status has changed', status);
   
   }, [status]);
+=======
+function SignUp() {
+    
+>>>>>>> 4ab0e536c4386167b2bd8ee63f0e61a22c317a91
     return (
 
       <div className="whole-page">
+        {/* <NavBar /> */}
         
         <div className="sign-up-section">
           
@@ -63,7 +75,8 @@ const  SignUp = ({
             {/* <button disabled={isSubmitting}>Submit</button> */}
             
             <p className="last-text">Already registered?
-            <a href="Components/Login.js"> Login to your account </a> </p>
+            <a href="Components/Login.js"> Login to your account </a>
+            </p>
 
           </Form>
 
