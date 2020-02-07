@@ -1,13 +1,10 @@
-
-
-
-
-
-
-
+.App {
+  text-align: center;
+}
 
 
 .whole-page{
+  padding-top: 35px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -16,14 +13,15 @@
 }
 
 .sign-up-section{
-  padding-top: 10px;
+  padding-top:15px;
   width: 30%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 1px solid rgb(187,187,187);
+  /* border: 1px solid rgb(187,187,187); */
   background: rgb(255,255,255);
+  margin-top: 25px;
   margin-left: 35%;
   margin-right: 35%;
   border-radius: 8px;
@@ -34,7 +32,7 @@
   padding-top: 10px;
   padding-bottom: 5px;
   padding-left: 3px;
-  border: 2px solid whitesmoke;
+  /* border: 2px solid whitesmoke; */
   margin: 5px;
   border-radius: 5px;
   color: rgb(10, 169, 190);
@@ -53,18 +51,22 @@ input, button{
   margin-bottom: 10px;
   border-radius: 5px;
   box-sizing: border-box;
-  color: rgb(194,194,194);
+  /* color: rgb(194,194,194); */
+  color: black;
 }
 label{
   color:black;
-  padding-left: 3px;
+  padding-left: 8px;
 }
 button{
-  width: 98%;
-  background: rgb(156, 156, 207);
+  width: 99%;
+  /* background: black; */
+  background: rgb(35, 223, 173);;
   color: white;
+  border-radius: 5px;
   margin-left: 1%;
   margin-right: 1%;
+  box-sizing: border-box;
 }
 form{
   padding-top: 10px;
@@ -79,13 +81,17 @@ form{
   height: 200px;
   justify-content: space-evenly;
 }
-
-.footer-text{
-  display: flex;
-  justify-content: space-evenly;
-}
 .last-text{
   display: flex;
   justify-content: space-evenly;
+  font-size: .7rem;
+  padding-bottom: 15px;
 }
+.footer-text{
+  margin-top: 80px;
+ padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 /* SignUp page styling ends here */
