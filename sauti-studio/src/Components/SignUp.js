@@ -1,21 +1,25 @@
-
 import React, { useState } from "react";
+<<<<<<< HEAD
 import '../Components/../App.css';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
 
+=======
+// import React from 'react';
+import { Link } from 'react-router';
+import Login from './Login';
+import '../Components/../App.css';
+import { withFormik, Form, Field } from "formik";
+// import * as Yup from "yup";
+>>>>>>> bcf7e08c15bcaa009badcba80efef42231c2ca89
 // export default function SignUp() {
   function SignUp(){
-
-
-
     return (
-
       <div className="whole-page">
-        
         <div className="sign-up-section">
+<<<<<<< HEAD
           
           <h1 className="title"> Create an account </h1>
           <Form >
@@ -39,6 +43,23 @@ import axios from "axios";
 
           </Form>
 
+=======
+                <h1 className="title"> Create an account </h1>
+                <Form >
+             <Field type="text" name="first-name" placeholder="First Name" />
+             <Field type="text" name="last-name" placeholder="Last Name" />
+             <Field type="email" name="email" placeholder="Email" />
+             <Field type="text" name="username" placeholder="Username" />
+            <Field type="password" name="password" placeholder="Password" />
+            <button>Create Account </button>
+            <p className="last-text">Already have an Account?
+            <a href="/Login"> Please Sign in </a> </p> 
+                </Form>
+            </div>
+            <nav className ="thierno-nav">
+                <p className ="footer-text">Copyright © bw-sauti-studio</p>
+            </nav>
+>>>>>>> bcf7e08c15bcaa009badcba80efef42231c2ca89
         </div>
 
         <nav className="thierno-nav">
