@@ -75,7 +75,7 @@ const FormikSignUp = withFormik({
       setErrors({ email: "That email is already taken" });
     } else {
       axios
-        .post("https://reqres.in/api/users/")
+        .post("'https://build-iv-sauti-studio.herokuapp.com/signup")
         
         .then(res => {
           console.log(res); 
@@ -92,5 +92,11 @@ const FormikSignUp = withFormik({
 })(SignUp);
 export default FormikSignUp;
 
+//  const [credentials, setCredentials] = useState({ username: '', password: ''});
 
+//     const login = e => {
+//         e.preventDefault();
+//         axiosWithAuth()
+//         .post('https://build-iv-sauti-studio.herokuapp.com/login', credentials)
+//         .then(res => {
 
