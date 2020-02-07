@@ -1,10 +1,9 @@
 
 import React, { useState } from "react";
-// import { Link } from 'react-router';
-import Login from './Login';
 import '../Components/../App.css';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 
 // export default function SignUp() {
@@ -48,28 +47,48 @@ import * as Yup from "yup";
 }
 const FormikSignUp = withFormik({
   mapPropsToValues({ email, username, password }) {
-      return {
+    return {
       email: email || "",
       username: username || "",
       password: password || ""
     };
   },
+
+
+
   validationSchema: Yup.object().shape({
-    
     email: Yup.string()
-      .email()
-      .required(),
+      .email("Email not valid")
+      .required("Email is required"),
     username: Yup.string()
       .required()
-       .min(6),
+      .min(6),
     password: Yup.string()
-      .min(6)
-      .required()
+      .min(16, "Password must be 16 characters or longer")
+      .required("Password is required")
   }),
 
-    handleSubmit(values) {
-    console.log(values);
-    //THIS IS WHERE YOU DO YOUR FORM SUBMISSION CODE... HTTP REQUESTS, ETC.
+  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+    if (values.email === "alreadytaken@atb.dev") {
+      setErrors({ email: "That email is already taken" });
+    } else {
+      axios
+        // .post("https://yourdatabaseurlgoeshere.com", values)
+        .post("https://databaseUrl", values)
+        .then(res => {
+          console.log(res); 
+          resetForm();
+          setSubmitting(false);
+        })
+        .catch(err => {
+          console.log(err);  
+          setSubmitting(false);
+        });
+    }
   }
-})(FormikSignUp);
+
+})(SignUp);
 export default FormikSignUp;
+
+
+
