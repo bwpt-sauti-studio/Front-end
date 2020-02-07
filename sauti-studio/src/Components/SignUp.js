@@ -17,33 +17,35 @@ import axios from "axios";
         
         <div className="sign-up-section">
           
-                <h1 className="title"> Create an account </h1>
-                <Form >
+          <h1 className="title"> Create an account </h1>
+          <Form >
             
-             <Field type="text" name="first-name" placeholder="First Name" />
+            <Field type="text" name="first-name" placeholder="First Name" />
         
-             <Field type="text" name="last-name" placeholder="Last Name" />
+            <Field type="text" name="last-name" placeholder="Last Name" />
           
-             <Field type="email" name="email" placeholder="Email" />
+            <Field type="email" name="email" placeholder="Email" />
           
-             <Field type="text" name="username" placeholder="Username" />
+            <Field type="text" name="username" placeholder="Username" />
           
             <Field type="password" name="password" placeholder="Password" />
         
-            <button>Create Account </button>
+            <button type="submit">Create Account </button>
             
-            <p className="last-text">Already have an Account?
-            <a href="Components/Login.js"> Please Sign in </a> </p> 
+            {/* <button disabled={isSubmitting}>Submit</button> */}
+            
+            <p className="last-text">Already registered?
+            <a href="Components/Login.js"> Login to your account </a> </p>
 
-                </Form>
+          </Form>
 
-            </div>
-
-            <nav className ="thierno-nav">
-                <p className ="footer-text">Copyright © bw-sauti-studio</p>
-            </nav>
         </div>
-    )
+
+        <nav className="thierno-nav">
+          <p className="footer-text">Copyright © bw-sauti-studio</p>
+        </nav>
+      </div>
+    );
 }
 const FormikSignUp = withFormik({
   mapPropsToValues({ email, username, password }) {
@@ -73,8 +75,8 @@ const FormikSignUp = withFormik({
       setErrors({ email: "That email is already taken" });
     } else {
       axios
-        // .post("https://yourdatabaseurlgoeshere.com", values)
-        .post("https://databaseUrl", values)
+        .post("https://reqres.in/api/users/", values)
+        
         .then(res => {
           console.log(res); 
           resetForm();
