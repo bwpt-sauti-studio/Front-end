@@ -75,7 +75,7 @@ const FormikSignUp = withFormik({
       setErrors({ email: "That email is already taken" });
     } else {
       axios
-        .post("https://reqres.in/api/users/", values)
+        .post("https://reqres.in/api/users/")
         
         .then(res => {
           console.log(res); 
