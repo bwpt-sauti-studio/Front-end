@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-=======
 import React, { useState } from 'react'
 import axiosWithAuth from './utils/axiosWithAuth';
 
  const Login = (props) => {
 
     const [credentials, setCredentials] = useState({ username: '', password: ''});
->>>>>>> master
 
     const login = e => {
         e.preventDefault();
