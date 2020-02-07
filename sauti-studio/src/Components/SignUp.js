@@ -1,19 +1,19 @@
 
 import React from "react";
 import '../Components/../App.css';
+// import NavBar './NavBar';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+// import axiosWithAuth from './utils/axiosWithAuth';
 
 
-// export default function SignUp() {
-  function SignUp(){
-
-
-
+function SignUp() {
+    
     return (
 
       <div className="whole-page">
+        {/* <NavBar /> */}
         
         <div className="sign-up-section">
           
@@ -35,7 +35,8 @@ import axios from "axios";
             {/* <button disabled={isSubmitting}>Submit</button> */}
             
             <p className="last-text">Already registered?
-            <a href="Components/Login.js"> Login to your account </a> </p>
+            <a href="Components/Login.js"> Login to your account </a>
+            </p>
 
           </Form>
 
