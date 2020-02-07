@@ -14,10 +14,6 @@ function App() {
 		<div className='App'>
 			<Router>
 				<NavBar />
-				<div>
-					{/* <Link to='/login'>Log In</Link> */}
-					{/* <Link to='/protected'>Sign Up</Link> */}
-				</div>
 				<Switch>
 					<ProtectedRoute path='/login' component={Login} />
 					<Route exact path='/protected' component={Login} />
