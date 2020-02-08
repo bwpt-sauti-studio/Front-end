@@ -107,7 +107,7 @@ const FormikSignUp = withFormik({
   handleSubmit(values, { setStatus } ) {
     console.log("submitting", values);
       axios
-        .post("https://build-iv-sauti-studio.herokuapp.com/sigup")
+        .post("https://build-iv-sauti-studio.herokuapp.com", values)
         
         .then(res => {
           console.log("Success:", res); 
