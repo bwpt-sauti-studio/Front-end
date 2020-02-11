@@ -20,6 +20,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   /* border: 1px solid rgb(187,187,187); */
+  /* background: rgb(96,101,43); */
   background: rgb(255,255,255);
   margin-top: 25px;
   margin-left: 35%;
@@ -45,7 +46,7 @@ input, button{
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 3px;
-  border: 2px solid whitesmoke;
+  /* border: 2px solid whitesmoke; */
   margin: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -93,5 +94,15 @@ form{
   display: flex;
   justify-content: space-evenly;
 }
+<<<<<<< HEAD
+.errors{
+  color: red;
+  font-size: .7rem;
+  /* text-align: center; */
+  margin-left: 15px;
+}
+/* SignUp page styling ends here */
+=======
 
 /* SignUp page styling ends here */
+>>>>>>> 4ab0e536c4386167b2bd8ee63f0e61a22c317a91
