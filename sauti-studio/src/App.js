@@ -6,7 +6,7 @@ import Login from './Components/Login';
 import SignUp from './Components/SignUp';
 import NavBar from './Components/NavBar';
 import Contact from './Components/Contact';
-// import Mindmap from './Components/Mindmap';
+import Mindmap from './Components/Mindmap';
 
 
 
@@ -19,7 +19,7 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
-          {/* <Route path="/mindmap" component={Mindmap}/> */}
+          <Route path="/mindmap" component={Mindmap}/>
           
       </Router>
       
